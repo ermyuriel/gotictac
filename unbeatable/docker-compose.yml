@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  aiapi:
+    env_file: .env
+    build: ./aiapi/.
+    ports:
+      - "${REACT_APP_API_PORT}:${REACT_APP_API_PORT}"
+  tictactoe:
+    env_file: .env
+    build: ./tictactoe/.
+    ports:
+      - "3000:3000"
