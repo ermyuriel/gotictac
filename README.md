@@ -1,6 +1,6 @@
 A simple unbeatable Tic Tac Toe game in Go and React for demonstration purposes
 
-CORS enabled for simplicity
+CORS enabled and .env commited for simplicity
 
 1.- Start with docker-compose up
 
