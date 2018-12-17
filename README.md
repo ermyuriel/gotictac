@@ -1,9 +1,30 @@
+##gotictac
+
 A simple unbeatable Tic Tac Toe game in Go and React for demonstration purposes
 
 CORS enabled and .env commited for simplicity
 
-1.- Start with docker-compose up
+## Requires
 
+Docker && Docker-Compose
+
+##Setup
+
+1.- Navigate to folder and run 
+```sh
+docker-compose up
+```
 2.- Navigate to http://localhost:3000
 
 3.- Lose or draw
+
+##Testing
+
+Unit tests are run via Go default testing package.
+
+```sh
+go test .\aiapi\
+```
+
+
+React interface code modified from starter template

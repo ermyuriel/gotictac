@@ -6,7 +6,7 @@ import (
 	"math"
 	"net/http"
 	"net/http/httputil"
-	"os"
+	"reflect"
 )
 
 const (
@@ -25,8 +25,8 @@ type Game struct {
 //main starts AI API on port from .env
 func main() {
 
-	http.HandleFunc(os.Getenv("REACT_APP_API_ENDPOINT"), moveHandler)
-	http.ListenAndServe(":"+os.Getenv("REACT_APP_API_PORT"), nil)
+	http.HandleFunc("/", moveHandler)
+	http.ListenAndServe(":8088", nil)
 
 }
 
@@ -65,6 +65,14 @@ func moveHandler(w http.ResponseWriter, r *http.Request) {
 //returnMove executes minimax algorithm from AI perspective if game is not over, returns new game board state. State is evaluated again after finding best move to determine if game should be terminated
 
 func returnMove(g *Game) *Game {
+
+	if g == nil || g.Board == nil || len(g.Board) != 9 {
+		return nil
+	}
+
+	if reflect.TypeOf(g.Board) != reflect.TypeOf([]string{}) {
+		return nil
+	}
 
 	if g.Winner != nval {
 		return g
@@ -209,8 +217,8 @@ func notPlayedIndexes(b []string) []int {
 
 }
 
-//pb is an auxiliary method to print a board in readable format for testing
-func pb(b []string) {
+//printBoard is an auxiliary method to print a board in readable format for testing
+func printBoard(b []string) {
 
 	for i := 1; i < 10; i++ {
 		if b[i-1] == nval {
