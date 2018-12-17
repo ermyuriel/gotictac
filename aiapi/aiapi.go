@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"math"
 	"net/http"
-	"net/http/httputil"
 	"os"
 	"reflect"
 )
@@ -35,10 +34,6 @@ func main() {
 //moveHandler parses JSON body from request as Game object and calls returnMove with next state from AI perspective, returning errors if necessary
 
 func moveHandler(w http.ResponseWriter, r *http.Request) {
-
-	x, _ := httputil.DumpRequest(r, true)
-
-	fmt.Println(string(x))
 
 	g := &Game{}
 
