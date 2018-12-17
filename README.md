@@ -1,4 +1,4 @@
-##gotictac
+## gotictac
 
 A simple unbeatable Tic Tac Toe game in Go and React for demonstration purposes
 
