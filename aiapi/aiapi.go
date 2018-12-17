@@ -25,7 +25,7 @@ type Game struct {
 //main starts AI API on port from .env
 func main() {
 
-	http.HandleFunc(os.Getenv("REACT_APP_API_HOST"), moveHandler)
+	http.HandleFunc(os.Getenv("REACT_APP_API_ENDPOINT"), moveHandler)
 
 	http.ListenAndServe(":"+os.Getenv("REACT_APP_API_PORT"), nil)
 
@@ -34,7 +34,7 @@ func main() {
 //moveHandler parses JSON body from request as Game object and calls returnMove with next state from AI perspective, returning errors if necessary
 
 func moveHandler(w http.ResponseWriter, r *http.Request) {
-
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	g := &Game{}
 
 	d := json.NewDecoder(r.Body)
@@ -53,7 +53,7 @@ func moveHandler(w http.ResponseWriter, r *http.Request) {
 		return
 
 	}
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+
 	w.WriteHeader(http.StatusOK)
 	w.Write(j)
 
