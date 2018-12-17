@@ -11,13 +11,13 @@ CORS enabled and .env commited for simplicity
 
 ## Setup
 
-1.- Navigate to folder and run 
+- Navigate to folder and run 
 ```sh
 docker-compose up
 ```
-2.- Navigate to http://localhost:3000
+- Navigate to http://localhost:3000
 
-3.- Lose or draw
+- Lose or draw
 
 ## Testing
 
