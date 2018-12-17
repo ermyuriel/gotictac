@@ -21,7 +21,7 @@ docker-compose up
 
 ## Testing
 
-Unit tests are run via Go default testing package.
+Unit tests are run via Go default testing package:
 
 ```sh
 go test .\aiapi\
