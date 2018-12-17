@@ -17,7 +17,7 @@ CORS enabled and .env commited for simplicity
 docker-compose up
 ```
 
-- Navigate to <http://localhost:3000>
+- Open <http://localhost:3000> in browser
 
 - Lose or draw
 
