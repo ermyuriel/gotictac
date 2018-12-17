@@ -6,7 +6,8 @@ CORS enabled and .env commited for simplicity
 
 ## Requires
 
-Docker && Docker-Compose
+- Docker
+- Docker-Compose
 
 ## Setup
 
