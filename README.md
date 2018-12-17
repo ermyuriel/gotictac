@@ -8,7 +8,7 @@ CORS enabled and .env commited for simplicity
 
 Docker && Docker-Compose
 
-##Setup
+## Setup
 
 1.- Navigate to folder and run 
 ```sh
@@ -18,7 +18,7 @@ docker-compose up
 
 3.- Lose or draw
 
-##Testing
+## Testing
 
 Unit tests are run via Go default testing package.
 
@@ -26,5 +26,6 @@ Unit tests are run via Go default testing package.
 go test .\aiapi\
 ```
 
+## Credit
 
 React interface code modified from starter template
