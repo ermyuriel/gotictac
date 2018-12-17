@@ -6,6 +6,7 @@ import (
 	"math"
 	"net/http"
 	"net/http/httputil"
+	"os"
 	"reflect"
 )
 
@@ -25,8 +26,8 @@ type Game struct {
 //main starts AI API on port from .env
 func main() {
 
-	http.HandleFunc("/", moveHandler)
-	http.ListenAndServe(":8088", nil)
+	http.HandleFunc(os.Getenv("REACT_APP_API_HOST"), moveHandler)
+	http.ListenAndServe(":"+os.Getenv("REACT_APP_API_PORT"), nil)
 
 }
 
