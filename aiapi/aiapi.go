@@ -27,6 +27,7 @@ type Game struct {
 func main() {
 
 	http.HandleFunc(os.Getenv("REACT_APP_API_HOST"), moveHandler)
+
 	http.ListenAndServe(":"+os.Getenv("REACT_APP_API_PORT"), nil)
 
 }
